@@ -1,0 +1,34 @@
+body {
+    font-family: 'Lato', sans-serif;
+    box-sizing: border-box;
+    font-size: 18px;
+}
+
+button {
+    background: none;
+    border: 1px solid grey;
+    border-radius: 4px;
+    padding: 0.5em 1.5em;
+}
+
+.pomodoro {
+    display: flex;
+}
+
+.pomodoro-sidebar {
+    padding: 2em;
+    border-right: 1px solid grey
+}
+
+.pomodoro-sidebarButtons > * {
+    margin-bottom: 0.5em;
+}
+
+.pomodoro-main {
+    text-align: center;
+    width: 20em;
+}
+
+.timeDisplay {
+    font-size: 5em;
+}
