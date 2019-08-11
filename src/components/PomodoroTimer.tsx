@@ -18,9 +18,14 @@ interface State {
     shouldStartTimer: boolean,
 }
 
+interface TimeSpec {
+    name: string,
+    time: Seconds,
+}
+
 type Action =
     | { type: 'set-timer', timerId: TimerId }
-    | { type: 'set-time', name: string, time: Seconds }
+    | { type: 'set-time', timeSpec: TimeSpec }
     | { type: 'play-pause' }
     | { type: 'tick' }
 
@@ -42,8 +47,8 @@ const reducer: React.Reducer<State, Action> = (state: State, action: Action) => 
             return { 
                 ...state, 
                 timer: { type: 'off' },
-                timerName: action.name, 
-                timeRemaining: action.time 
+                timerName: action.timeSpec.name, 
+                timeRemaining: action.timeSpec.time 
             };
 
         case 'tick': 
@@ -77,7 +82,7 @@ const initState: State = {
     shouldStartTimer: false,
 };
 
-const timerPresets = [
+const timerPresets: TimeSpec[] = [
     { name: 'Pomodoro', time: 25 * 60 },
     { name: 'Short Break', time: 5 * 60 },
     { name: 'Long Break', time: 15 * 60 },
@@ -98,7 +103,7 @@ const PomodoroTimer: React.FC<{}> = () => {
         <div>
             <button 
                 type='button'
-                onClick={() => dispatch({ type: 'set-time', ...timeSpec })}
+                onClick={() => dispatch({ type: 'set-time', timeSpec })}
             >
                 {timeSpec.name}
             </button>
