@@ -97,8 +97,8 @@ const PomodoroTimer: React.FC<{}> = () => {
     const presetButtons = timerPresets.map((timeSpec) => (
         <div>
             <button 
-            type='button'
-            onClick={() => dispatch({ type: 'set-time', ...timeSpec })}
+                type='button'
+                onClick={() => dispatch({ type: 'set-time', ...timeSpec })}
             >
                 {timeSpec.name}
             </button>
@@ -118,7 +118,7 @@ const PomodoroTimer: React.FC<{}> = () => {
                 <TimeDisplay seconds={state.timeRemaining} />
                 <button 
                     type="button"
-                    onClick={() => dispatch({ type: 'play-pause' }}
+                    onClick={() => dispatch({ type: 'play-pause' })}
                 >
                     Play/Pause
                 </button>

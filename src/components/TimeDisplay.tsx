@@ -8,8 +8,7 @@ interface Props {
 const TimeDisplay: React.FC<Props> = (props) => {
     const minutes = Math.floor(props.seconds / 60);
     const seconds = props.seconds % 60;
-
-    const zeroPad = (n: number) => ( _.padStart(String(n), 2, '0') );
+    const zeroPad = (n: number) =>  _.padStart(String(n), 2, '0');
 
     return (
         <div className="timeDisplay">
