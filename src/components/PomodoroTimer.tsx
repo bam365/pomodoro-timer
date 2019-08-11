@@ -94,7 +94,7 @@ const PomodoroTimer: React.FC<{}> = () => {
         }
     });
 
-    const presetButtons = timerPresets.map((timeSpec) => (
+    const presetButtons = timerPresets.map(timeSpec => (
         <div>
             <button 
                 type='button'
@@ -103,7 +103,7 @@ const PomodoroTimer: React.FC<{}> = () => {
                 {timeSpec.name}
             </button>
         </div>
-    ))
+    ));
 
     return (
         <div className="pomodoro">
